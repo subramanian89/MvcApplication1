@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src ="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script type="text/javascript" src = "/Content/Scripts/App.js"></script>
+    <script type="text/javascript" src="/Content/Scripts/tooltip.js"></script> 
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Content/Style/StyleSheet.css" />
+
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+     <link href="https://fonts.googleapis.com/css?family=Abel:400|Oswald:300,400,700" media="all" rel="stylesheet" type="text/css" />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="page">
+        <header id='header'>
+        <div class=".nav-collapse.collapse">
+            <div class='navbar navbar-inverse navbar-fixed-top'>
+                <div class='navbar-inner'>
+                    <div class='container'>
+                        
+                        <a href="/" class="title1">Drazzpik</a>
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+</body>
+</html>

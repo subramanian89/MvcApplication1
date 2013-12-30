@@ -1,0 +1,60 @@
+﻿ <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <script type="text/javascript">
+        // Load the Google Transliterate API
+        google.load("elements", "1", {
+            packages: "transliteration"
+        });
+
+        function onLoad() {
+            var options = {
+                sourceLanguage: 'en',
+                destinationLanguage: ['hi', 'kn', 'ml', 'ta', 'te'],
+                shortcutKey: 'ctrl+g',
+                transliterationEnabled: true
+            };
+
+            // Create an instance on TransliterationControl with the required
+            // options.
+            var control =
+                new google.elements.transliteration.TransliterationControl(options);
+
+
+            // Enable transliteration in the textbox with id
+            // 'transliterateTextarea'.
+            control.makeTransliteratable(['transliterateTextareaTop']);
+            control.makeTransliteratable(['transliterateTextareaBottom']);
+            control.showControl('translControl');
+
+        }
+        google.setOnLoadCallback(onLoad);
+    </script>
+
+<script type="text/javascript">
+    function CreateImageController($scope) {
+        
+ }
+    </script>
+<body ng-app>
+    <div ng-controller="CreateImageController">
+          @using (Html.BeginForm("Instance", "Create", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{<div id='translControl'></div>
+        
+<div>
+    
+    <input type="text" class="transliterateTextarea" id="transliterateTextareaTop" ng-model="toptext" ></input>
+    </div>
+<div>
+     <input type="text" class="transliterateTextarea" id="transliterateTextareaBottom" ng-model="bottomtext"></input>
+
+    </div>
+
+        <label> {{toptext}} {{bottomtext}}</label>
+
+       
+         <img src="/api/book/instance/@ViewBag.Value?top={{toptext}}&bottom={{bottomtext}}" />
+               <input type="submit" value="OK" />
+}
+        </div>
+    </body>

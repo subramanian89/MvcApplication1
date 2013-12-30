@@ -1,0 +1,20 @@
+﻿ 
+
+<script type="text/javascript">
+    function ContactController($scope) {
+
+    }
+    </script>
+<body ng-app>
+    <div ng-controller="ContactController">
+         <div id='translControl'></div>
+
+<div>
+
+    @using (Html.BeginForm("Index", "Create", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file"/>
+    <input type="submit" value="OK" />
+}
+   
+    </body>
